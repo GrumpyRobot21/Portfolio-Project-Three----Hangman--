@@ -103,3 +103,24 @@ def play_game(hang_word, lives):
 
     print(Colortext.GREEN + Colortext.BOLD + "Now we get to test your nerve!!! Guess the word and escape\nthe noose this day.......!")
     print("\nYou have", lives, "lives left before the big drop...\ndon't lose them all at once!")
+
+    while len(player_letters) > 0 and lives > 0:  # loops user letter guesses until game lost or won.
+        print(Colortext.RED + player_lives(lives))  # Prints player hangman 'life' graphic
+        check_list = [letter if letter in used else '_' for letter in hang_word]  # Comprehension substitutes dashes for the letters and checks to see if letters have been used.
+        print(Colortext.GREEN + Colortext.BOLD +"\nYour word to guess for this round is: ", " ".join(check_list))  # presents list of dashes for randomly chosen game word
+        print("\nYou have already used these letters: ", " ".join(used))
+
+        user_guess = input("\nWhat's your best guess? \n").upper()
+        if user_guess in characters - used:
+            used.add(user_guess)  # when user chooses a letter add it to the used set
+            if user_guess in player_letters:
+                player_letters.remove(user_guess) 
+                print("")  # For correct user guesses. Adds letter(s) to word template
+                print(Colortext.YELLOW + Colortext.BOLD + "Phew! That WAS a lucky guess! It's in there!")
+                time.sleep(3)  # 3 second delay
+                print('\033c', end='')  # clears the console - \033 s the ASCII escape character.
+            else:
+                lives = lives-1  # Incorrect user choice and deducts life from tally
+                print(Colortext.YELLOW + Colortext.BOLD + "\n Oh dear, oh dear, oh dear. One step closer to the drop!..\n", user_guess, "' ain't in the word my friend!")
+                time.sleep(4)  # 4 second delay
+                print('\033c', end='')  # clears the console - \033 s the ASCII escape character.
