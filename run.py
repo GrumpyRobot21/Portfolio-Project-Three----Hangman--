@@ -89,4 +89,17 @@ def choose_word():
     return word.upper()  # returns the random game word in upper case 
 
 
-hang_word = choose_word()  # defining a variable for the game function               
+hang_word = choose_word()  # defining a variable for the game function
+
+
+def play_game(hang_word, lives):
+    """
+    Game play function
+    """
+    player_letters = set(hang_word)  # creates a set of the random word choice letters
+    characters = set(string.ascii_uppercase)  # Ascii letters pool for user and word letter choices (in uppercase)
+    used = set()  # creates and references a set of the letters that have been used in the game
+    player_life = str(lives)  # defines a game variable making a string out of the lives remaining/ chosen through difficulty level
+
+    print(Colortext.GREEN + Colortext.BOLD + "Now we get to test your nerve!!! Guess the word and escape\nthe noose this day.......!")
+    print("\nYou have", lives, "lives left before the big drop...\ndon't lose them all at once!")
