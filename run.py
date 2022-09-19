@@ -51,3 +51,31 @@ def start_intro():
         time.sleep(2)
         print('\033c', end='')  # clears the console - \033 is the ASCII escape character.
         game_rules()
+
+
+def game_rules():
+    """
+    Rules for gameplay and player difficulty selection
+    """
+    print(Colortext.GREEN + Colortext.BOLD + player_lives(10))
+    print(Colortext.RED + Colortext.BOLD + "Select your difficulty level from the choices below and the challenge will \nbegin. See you at the end .......of the rope! \n\nEnter" + Colortext.BLUE + Colortext.BOLD +" '1' " + Colortext.RED + Colortext.BOLD + "for difficulty level - " + Colortext.YELLOW + "'Lemon Squeezy' " + Colortext.RED + Colortext.BOLD + "\nalso known as:" + Colortext.YELLOW + "\n'I can see the pub from up here!' \n\n" + Colortext.RED + Colortext.BOLD + "Enter" + Colortext.BLUE + Colortext.BOLD + " '2' " + Colortext.RED + Colortext.BOLD + "for difficulty level - " + Colortext.YELLOW + "'King of the Swingers!' " + Colortext.RED + Colortext.BOLD + "\nalso known as:" + Colortext.YELLOW + "\n'That's a smidge on the tight side, cough cough!'")
+
+    choose = input('\n')
+
+    if choose == '1':  # Player selects easiest challenge setting.
+        lives = 10
+        print(Colortext.GREEN + Colortext.BOLD + "\n\nPlaying it safe eh? or maybe prolonging the agony.....They do say that waiting is the worst!! \n\nAll that nervous anticipation.....! ")
+        time.sleep(5)  # 5 second delay
+        print('\033c', end='')  # clears the console - \033 is the ASCII escape character.
+        play_game(hang_word, lives)
+    elif choose == '2':  # Player selects difficult challenge setting.
+        lives = 5
+        print(Colortext.GREEN + Colortext.BOLD + "\n\nOoh, you're feeling brave aren't you!\n\nThis won't take long! ")
+        time.sleep(5)  # 5 second delay
+        print('\033c', end='')  # clears the console - \033 is the ASCII escape character.
+        play_game(hang_word, lives)
+    else:  # Error message for incorrect choice.
+        print(Colortext.GREEN + Colortext.BOLD + "\n\nNot getting the 'hang' of this are you? (you see what I did there?).\n\nLet's try this again...  \n\nChoose either 1 or 2 to get this show on the road!")
+        time.sleep(5)  # 5 second delay
+        print('\033c', end='')  # clears the console - \033 s the ASCII escape character.
+        game_rules()
