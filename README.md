@@ -44,3 +44,40 @@ To build a terminal based game of Hangman for user to mentally challenge themsel
 * Home/Start page
   * Explains Game play to user
   * Explains how to continue
+
+  ![Home page](docs/read-me/main-menu.png)
+
+* Choose challenge difficulty
+  * 'Lemon Squeezy' = 10 lives
+  * 'King of the Swingers!' = 5 lives
+
+![Choose difficulty](docs/read-me/difficulty.png)
+
+* View Game Rules
+
+![View game rules](docs/read-me/rules.png)
+
+ * Random word generations
+   * A function randomly generates a word from a list of 500 words.
+   * The player can not see what the word is but can see how many letters are in the word denoted by _ _ _ _ _ 
+
+![Game play](docs/read-me/amount-of-letters.png) 
+
+ * Lives with graphical representation
+   * Depending on difficilty level chosen, the user has a limited amount of lives before game ends.
+   * Graphically represented while playing the game.
+  
+![Ammount of Lives](docs/read-me/hangman-graphic.png) 
+
+* Game Over Screens.
+ * A custom screen for winning the game and for game over. 
+ * Users can choose whether to restart the game or go back to the main menu.
+
+![You Win!](docs/read-me/you-win.png) 
+
+![You lose!](docs/read-me/game-over.png) 
+
+* Checks for invalid inputs.
+  * For all user inputs, checks are run to ensure there are no invalid inputs submitted.
+  * For any invalid submissions, a tailored error message is displayed and the user is prompted to input their selection again.
+
