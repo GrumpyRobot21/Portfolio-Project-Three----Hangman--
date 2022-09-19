@@ -19,20 +19,20 @@ def start_intro():
     Generates game options for player: intro to the game, difficulty, rules.
     """
     print(Colortext.BOLD + Colortext.YELLOW + """
-        _____________________________________________
-       |_____________________________________________|
+       ==============================================
+       ==============================================
          ||                              \ \     |  |
          ||                               \ \    |  |
         /==\                               \ \   |  |
-       |____|                               \ \  |  |
-       |____|                                \ \ |  |
-       |____|                                 \ \|  |
+       |====|                               \ \  |  |
+       |====|                                \ \ |  |
+       |====|                                 \ \|  |
        //  \\\                                  \ |  |
       //    \\\                                  \|  |
      //      \\\                                  |  |
      \\\      // 
       \\\    //
-       \\\__// 
+       \\\==// 
     """)
     print(Colortext.BLUE + Colortext.BOLD + " Welcome to ye olde game of HANGMAN!!!!\n\n You the player must carefully select letters in the vain hope\nof avoiding the gallows by guessing the word before it's too late!\n\n Can you cheat the hangmans noose in time?  Find out....if you dare!\n")
 
