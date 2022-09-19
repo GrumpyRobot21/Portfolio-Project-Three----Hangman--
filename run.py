@@ -40,12 +40,12 @@ def start_intro():
 
     run = input('\n')
     if run != ('p'):
-        print(Colortext.GREEN + Colortext.BOLD +"\n\nWRONG KEY!!! (I would go for the easy setting if I were you...). \n\nPress 'p' to continue: ")
+        print(Colortext.GREEN + Colortext.BOLD +"\n\n WRONG KEY!!! (I would go for the easy setting if I were you...). \n\n Press 'p' to continue: ")
         time.sleep(3)
         print('\033c', end='')  # clears the console - \033 is the ASCII escape character.
         start_intro()
     else:
-        print(Colortext.YELLOW + Colortext.BOLD + '\n\nGOOD LUCK!')
+        print(Colortext.YELLOW + Colortext.BOLD + '\n\n GOOD LUCK!')
         time.sleep(2)
         print('\033c', end='')  # clears the console - \033 is the ASCII escape character.
         game_rules()
