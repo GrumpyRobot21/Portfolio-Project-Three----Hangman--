@@ -31,9 +31,9 @@ To build a terminal based game of Hangman for user to mentally challenge themsel
  * It should be suitably challenging and encourage users to replay many times.
 
  ### **Using FlowCharts**
- During the planning process in order to assist with the coding progress and to fighure out the linear process of the game I created the following flowchart.
+ During the planning process in order to assist with the development progress and to figure out the linear process of the game I created the following flowchart.
   * Where were inputs from the user needed?
   * How would I deal with invalid inputs or incorrect tries?
   * Were there any logic errors that could perceivably break the game?
 
-![Design FlowChart](docs/read-me/hangman-flowchart.png) 
+![Design FlowChart](images/hangman_flow.jpg) 
