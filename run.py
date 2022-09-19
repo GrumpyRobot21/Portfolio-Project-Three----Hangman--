@@ -154,4 +154,23 @@ def re_run():
     """
     again = pyfiglet.figlet_format("Try Again!")
     print(Colortext.RED + Colortext.BOLD + again)
-    print(Colortext.GREEN + Colortext.BOLD + "\n\n(Well, we had to include the statutory" + Colortext.YELLOW + Colortext.BOLD + "'BIG LETTERS'" + Colortext.GREEN + Colortext.BOLD + "at some point..)\n\nNow, to give this fabulously designed game another shot\n\nenter " + Colortext.YELLOW + Colortext.BOLD + "'y'" + Colortext.GREEN + Colortext.BOLD +" for 'Lets do this!' or..\n\nenter " + Colortext.YELLOW + Colortext.BOLD + "'n'" + Colortext.GREEN + Colortext.BOLD +" for 'I'm a big Jessie'")        
+    print(Colortext.GREEN + Colortext.BOLD + "\n\n(Well, we had to include the statutory" + Colortext.YELLOW + Colortext.BOLD + "'BIG LETTERS'" + Colortext.GREEN + Colortext.BOLD + "at some point..)\n\nNow, to give this fabulously designed game another shot\n\nenter " + Colortext.YELLOW + Colortext.BOLD + "'y'" + Colortext.GREEN + Colortext.BOLD +" for 'Lets do this!' or..\n\nenter " + Colortext.YELLOW + Colortext.BOLD + "'n'" + Colortext.GREEN + Colortext.BOLD +" for 'I'm a big Jessie'")
+
+    choice = input('\n')
+
+    if choice == 'y':  # Player elects to play again.
+        lives = 10
+        print(Colortext.RED + Colortext.BOLD + "\n\nIf at first you don't succeed blah blah etc.\n\nAt least I get a chance to place another little bet!")
+        time.sleep(6)  # 4 second delay
+        print('\033c', end='')  # clears the console - \033 is the ASCII escape character.
+        game_rules()
+    elif choice == 'n':  # Player selects difficult challenge setting.
+        print(Colortext.RED + Colortext.BOLD + "\n\nNever mind, I understand. Once bitten, twice shy. \n\nIt takes a strong 'backbone' to play this game more than once.\n\nThat's ok if you don't have what it takes.......  ")
+        time.sleep(6)  # 6 second delay
+        print('\033c', end='')  # clears the console - \033 is the ASCII escape character.
+        main()
+    else:  # Error message for incorrect choice.
+        print(Colortext.BLUE + Colortext.BOLD + "\n\nSTILL not getting the 'hang' of this are you? \n\nLet's give this one more go shall we?")
+        time.sleep(4)  # 4 second delay
+        print('\033c', end='')  # clears the console - \033 s the ASCII escape character.
+        re_run()
