@@ -13,6 +13,7 @@ class Colortext:
     YELLOW = '\033[1;33m'
     BOLD = '\033[1m'
 
+
 def start_intro():
     """
     Generates game options for player: intro to the game, difficulty, rules.
@@ -79,3 +80,13 @@ def game_rules():
         time.sleep(5)  # 5 second delay
         print('\033c', end='')  # clears the console - \033 s the ASCII escape character.
         game_rules()
+
+def choose_word():
+    """
+    Random word selector for the game
+    """
+    word = random.choice(words)
+    return word.upper()  # returns the random game word in upper case 
+
+
+hang_word = choose_word()  # defining a variable for the game function               
