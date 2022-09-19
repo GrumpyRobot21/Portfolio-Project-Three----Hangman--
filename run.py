@@ -335,4 +335,11 @@ def player_lives(lives):
     return player_live[lives]
 
 
-    
+def main():
+    """
+    Game starts
+    """   
+    start_intro()
+
+
+main()    
