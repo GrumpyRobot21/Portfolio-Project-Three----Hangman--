@@ -124,3 +124,11 @@ def play_game(hang_word, lives):
                 print(Colortext.YELLOW + Colortext.BOLD + "\n Oh dear, oh dear, oh dear. One step closer to the drop!..\n", user_guess, "' ain't in the word my friend!")
                 time.sleep(4)  # 4 second delay
                 print('\033c', end='')  # clears the console - \033 s the ASCII escape character.
+        elif user_guess in used:  # When user chooses letter already used and identified as being in the used set
+            print(Colortext.YELLOW + Colortext.BOLD + "\nTrying to pull a fast one are you?\nYou can't use the same letter twice!")
+            time.sleep(3)  # 3 second delay
+            print('\033c', end='')  # clears the console - \033 s the ASCII escape character.
+        else:  # when user chooses non ascii qualified character.
+            print(Colortext.YELLOW + Colortext.BOLD + "\nHehehe, \nTime to make better choices.\n\nPreferably one's you haven't made already....")
+            time.sleep(4)  # 4 second delay
+            print('\033c', end='')  # clears the console - \033 s the ASCII escape character.        
