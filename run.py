@@ -56,7 +56,7 @@ def game_rules():
     Rules for gameplay and player difficulty selection
     """
     print(Colortext.GREEN + Colortext.BOLD + player_lives(10))
-    print(Colortext.RED + Colortext.BOLD + "Select your difficulty level from the choices below and the challenge will \nbegin. See you at the end .......of the rope! \n\nEnter" + Colortext.BLUE + Colortext.BOLD +" '1' " + Colortext.RED + Colortext.BOLD + "for difficulty level - " + Colortext.YELLOW + "'Lemon Squeezy' " + Colortext.RED + Colortext.BOLD + "\nalso known as: " + Colortext.YELLOW + "'I can see the pub from up here!' \n\n" + Colortext.RED + Colortext.BOLD + "Enter" + Colortext.BLUE + Colortext.BOLD + " '2' " + Colortext.RED + Colortext.BOLD + "for difficulty level - " + Colortext.YELLOW + "'King of the Swingers!' " + Colortext.RED + Colortext.BOLD + "\nalso known as:" + Colortext.YELLOW + " 'That's a smidge on the tight side, cough cough!'")
+    print(Colortext.RED + Colortext.BOLD + " Select your difficulty level from the choices below and the challenge will \n begin. See you at the end .......of the rope! \n\n Enter" + Colortext.BLUE + Colortext.BOLD +" '1' " + Colortext.RED + Colortext.BOLD + "for difficulty level - " + Colortext.YELLOW + "'Lemon Squeezy' " + Colortext.RED + Colortext.BOLD + "\n also known as: " + Colortext.YELLOW + "'I can see the pub from up here!' \n\n" + Colortext.RED + Colortext.BOLD + " Enter" + Colortext.BLUE + Colortext.BOLD + " '2' " + Colortext.RED + Colortext.BOLD + "for difficulty level - " + Colortext.YELLOW + "'King of the Swingers!' " + Colortext.RED + Colortext.BOLD + "\n also known as:" + Colortext.YELLOW + " 'That's a smidge on the tight side, cough cough!'")
 
     choose = input('\n')
 
@@ -103,7 +103,7 @@ def play_game(hang_word, lives):
 
     while len(player_letters) > 0 and lives > 0:  # loops user letter guesses until game lost or won.
         print(Colortext.RED + player_lives(lives))  # Prints player hangman 'life' graphic
-        check_list = [letter if letter in used else '_' for letter in hang_word]  # Comprehension substitutes dashes for the letters and checks to see if letters have been used.
+        check_list = [letter if letter in used else '-' for letter in hang_word]  # Comprehension substitutes dashes for the letters and checks to see if letters have been used.
         print(Colortext.GREEN + Colortext.BOLD +"\nYour word to guess for this round is: ", " ".join(check_list))  # presents list of dashes for randomly chosen game word
         print("\nYou have already used these letters: ", " ".join(used))
 
