@@ -55,7 +55,6 @@ def game_rules():
     """
     Rules for gameplay and player difficulty selection
     """
-    print(Colortext.GREEN + Colortext.BOLD + player_lives(10))
     print(Colortext.RED + Colortext.BOLD + " Select your difficulty level from the choices below and the challenge will \n begin. See you at the end .......of the rope! \n\n Enter" + Colortext.BLUE + Colortext.BOLD +" '1' " + Colortext.RED + Colortext.BOLD + "for difficulty level - " + Colortext.YELLOW + "'Lemon Squeezy' " + Colortext.RED + Colortext.BOLD + "\n also known as: " + Colortext.YELLOW + "'I can see the pub from up here!' \n\n" + Colortext.RED + Colortext.BOLD + " Enter" + Colortext.BLUE + Colortext.BOLD + " '2' " + Colortext.RED + Colortext.BOLD + "for difficulty level - " + Colortext.YELLOW + "'King of the Swingers!' " + Colortext.RED + Colortext.BOLD + "\n also known as:" + Colortext.YELLOW + " 'That's a smidge on the tight side, cough cough!'")
 
     choose = input('\n')
