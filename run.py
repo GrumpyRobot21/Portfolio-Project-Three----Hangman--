@@ -30,16 +30,13 @@ def start_intro():
        //  \\\                                  \ |  |
       //    \\\                                  \|  |
      //      \\\                                  |  |
-    ||        ||
-    ||        ||
-    ||        ||
      \\\      // 
       \\\    //
        \\\__// 
     """)
-    print(Colortext.BLUE + Colortext.BOLD + "Welcome to ye olde game of HANGMAN!!!!\n\nYou the player must carefully select letters in the vain hope of avoiding the gallows \nby guessing the word before it's too late!\n\nCan you cheat the hangmans noose in time?  Find out....if you dare!\n")
+    print(Colortext.BLUE + Colortext.BOLD + " Welcome to ye olde game of HANGMAN!!!!\n\n You the player must carefully select letters in the vain hope\nof avoiding the gallows by guessing the word before it's too late!\n\n Can you cheat the hangmans noose in time?  Find out....if you dare!\n")
 
-    print(Colortext.BLUE + Colortext.BOLD + "Enter " +Colortext.GREEN + Colortext.BOLD + "'p' "+ Colortext.BLUE + Colortext.BOLD +  "to continue: ")
+    print(Colortext.BLUE + Colortext.BOLD + " Enter " +Colortext.GREEN + Colortext.BOLD + "'p' "+ Colortext.BLUE + Colortext.BOLD +  "to continue: ")
 
     run = input('\n')
     if run != ('p'):
