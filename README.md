@@ -17,3 +17,23 @@ As per the standard Hangman rules, Users try to guess the word by inputting lett
  * [**Validators**](#validators)
  * [**Deployment**](#deployment)
  * [**Credits**](#credits)
+
+## **How to Play**
+Players play Hangman(with added sarcasm) by typing letters into the mock terminal. The purpose of the game is to guess the hidden word. The words are represented with empty dashes to show players how many letters they have to guess in order to win. when the player guesses a correct letter, the individual dashes are replaced with the correct letter. When a player buesses incorrectly, they will receive an error message and the playes lives will reduce by one. The player will then be invited to continue to input their guesses until thier total lives have run out or the word has been correctly guessed. 
+The game is over either when the player has correctly guessed the word or they have run out of lives. 
+
+## **Planning Stage**
+
+### **User Goals**
+To build a terminal based game of Hangman for user to mentally challenge themselves in a fun gaming environment.
+ * The game rules and environment should be easily interpreted and accessible for a user.
+ * The game should definitely be lots of fun to play.
+ * It should be suitably challenging and encourage users to replay many times.
+
+ ### **Using FlowCharts**
+ During the planning process in order to assist with the coding progress and to fighure out the linear process of the game I created the following flowchart.
+  * Where were inputs from the user needed?
+  * How would I deal with invalid inputs or incorrect tries?
+  * Were there any logic errors that could perceivably break the game?
+
+![Design FlowChart](docs/read-me/hangman-flowchart.png) 
