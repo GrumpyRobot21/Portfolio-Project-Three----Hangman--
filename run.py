@@ -133,4 +133,25 @@ def play_game(hang_word, lives):
             time.sleep(4)  # 4 second delay
             print('\033c', end='')  # clears the console - \033 s the ASCII escape character.
 
-            
+    if lives == 0:
+        print(Colortext.RED + player_lives(lives))
+        print(Colortext.GREEN + Colortext.BOLD + "\nOUCH!! I bet that stings a bit.! \n\nYou didn't beat the hangman this time around, but in the wonderful realm of the \n\ndigital world you may get the chance to play again...\n\nif you've the 'neck' for it that is.")
+        print("\n\nBy the way, the word you missed was: "+ Colortext.YELLOW + hang_word)
+        time.sleep(7)  # 6 second delay
+        print('\033c', end='')  # clears the console - \033 s the ASCII escape character.
+        re_run()  # goes to game replay options
+    else:
+        print(Colortext.RED + player_lives(lives))
+        print(Colortext.GREEN + Colortext.BOLD +"\nWell done, You did it!! (You just cost me a fiver though.....)\n\nI'll bet you fancy another try?")
+        time.sleep(6)  # 4 second delay
+        print('\033c', end='')  # clears the console - \033 s the ASCII escape character.
+        re_run()  # goes to game replay options
+
+
+def re_run():
+    """
+    Option to replay game function
+    """
+    again = pyfiglet.figlet_format("Try Again!")
+    print(Colortext.RED + Colortext.BOLD + again)
+    print(Colortext.GREEN + Colortext.BOLD + "\n\n(Well, we had to include the statutory" + Colortext.YELLOW + Colortext.BOLD + "'BIG LETTERS'" + Colortext.GREEN + Colortext.BOLD + "at some point..)\n\nNow, to give this fabulously designed game another shot\n\nenter " + Colortext.YELLOW + Colortext.BOLD + "'y'" + Colortext.GREEN + Colortext.BOLD +" for 'Lets do this!' or..\n\nenter " + Colortext.YELLOW + Colortext.BOLD + "'n'" + Colortext.GREEN + Colortext.BOLD +" for 'I'm a big Jessie'")        
