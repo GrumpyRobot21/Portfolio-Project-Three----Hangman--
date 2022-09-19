@@ -12,3 +12,28 @@ class Colortext:
     BLUE = '\033[0;34m'
     YELLOW = '\033[1;33m'
     BOLD = '\033[1m'
+
+def start_intro():
+    """
+    Generates game options for player: intro to the game, difficulty, rules.
+    """
+    print(Colortext.BOLD + Colortext.YELLOW + """
+        _____________________________________________
+       |_____________________________________________|
+         ||                              \ \     |  |
+         ||                               \ \    |  |
+        /==\                               \ \   |  |
+       |____|                               \ \  |  |
+       |____|                                \ \ |  |
+       |____|                                 \ \|  |
+       //  \\\                                  \ |  |
+      //    \\\                                  \|  |
+     //      \\\                                  |  |
+    ||        ||
+    ||        ||
+    ||        ||
+     \\\      // 
+      \\\    //
+       \\\__// 
+    """)
+    print(Colortext.BLUE + Colortext.BOLD + "Welcome to ye olde game of HANGMAN!!!!\n\nYou the player must carefully select letters in the vain hope of avoiding the gallows \nby guessing the word before it's too late!\n\nCan you cheat the hangmans noose in time?  Find out....if you dare!\n")
