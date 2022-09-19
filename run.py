@@ -131,4 +131,6 @@ def play_game(hang_word, lives):
         else:  # when user chooses non ascii qualified character.
             print(Colortext.YELLOW + Colortext.BOLD + "\nHehehe, \nTime to make better choices.\n\nPreferably one's you haven't made already....")
             time.sleep(4)  # 4 second delay
-            print('\033c', end='')  # clears the console - \033 s the ASCII escape character.        
+            print('\033c', end='')  # clears the console - \033 s the ASCII escape character.
+
+            
