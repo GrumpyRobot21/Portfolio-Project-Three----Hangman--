@@ -79,3 +79,12 @@ To build a terminal based game of Hangman for users to mentally challenge themse
 * For all user inputs, checks are run to ensure there are no invalid inputs submitted.
 * For any invalid submissions, a tailored error message is displayed and the user is prompted to input their selection again.
 
+## **Future Functionality Ideas**
+ * An option for the user to input the whole word if they guess it correctly before the game is over.
+ * Increase the level of difficulty by adding a third option where each turn is timed. If the timer runs down a life is lost..
+ * increase number of words in game word file. 
+
+ ## **Testing**
+The code was validated using: 
+* Code was run through a PEP8 linter using (http://pep8online.com/) to identify and fix any errors.
+* Manually tested the application by inputting all possible iterations of user responses and measuring the outcome with the expected parameters to confirm all were functioning as they should be. (within the IDE environemnt and in the deployed environment via the Heroku platform.
