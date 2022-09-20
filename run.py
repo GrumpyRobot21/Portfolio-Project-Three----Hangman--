@@ -131,8 +131,8 @@ def play_game(hang_word, lives):
 
     if lives == 0:
         print(Colortext.RED + player_lives(lives))
-        print(Colortext.GREEN + Colortext.BOLD + "\n OUCH!! I bet that stings a bit.! \n You didn't beat the hangman this time around, but in the wonderful realm of the \n digital world you may get the chance to play again...\n if you've the 'neck' for it that is.")
-        print("\n\n By the way, the word you missed was: "+ Colortext.YELLOW + hang_word)
+        print(Colortext.GREEN + Colortext.BOLD + "\n OUCH!! I bet that stings a bit.! \n You didn't beat the hangman this time around, but in the wonderful realm of the\n digital world you may get the chance to play again...\n if you've the 'neck' for it that is.")
+        print("\n By the way, the word you missed was: "+ Colortext.YELLOW + hang_word)
         time.sleep(10)  # 10 second delay
         print('\033c', end='')  # clears the console - \033 s the ASCII escape character.
         re_run()  # goes to game replay options
