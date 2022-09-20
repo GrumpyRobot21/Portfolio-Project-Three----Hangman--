@@ -12,9 +12,8 @@ As per the standard Hangman rules, Users try to guess the word by inputting lett
  * [**Planning Stage**](#planning-stage)
  * [**Features**](#features)
  * [**Testing**](#testing)
- * [**Technologies Used**](#technologies-used)
+ * [**Languages Used**](#languages)
  * [**Bugs**](#bugs)
- * [**Validators**](#validators)
  * [**Deployment**](#deployment)
  * [**Credits**](#credits)
 
@@ -74,17 +73,44 @@ To build a terminal based game of Hangman for users to mentally challenge themse
 ![You lose!](images/lose_screen.jpg) 
 * Users can choose whether to restart the game or go back to the main menu.
 
+![Error Message](images/error.jpg)
 
 * Checks for invalid inputs.
 * For all user inputs, checks are run to ensure there are no invalid inputs submitted.
 * For any invalid submissions, a tailored error message is displayed and the user is prompted to input their selection again.
 
 ## **Future Functionality Ideas**
- * An option for the user to input the whole word if they guess it correctly before the game is over.
- * Increase the level of difficulty by adding a third option where each turn is timed. If the timer runs down a life is lost..
- * increase number of words in game word file. 
+* An option for the user to input the whole word if they guess it correctly before the game is over.
+* Increase the level of difficulty by adding a third option where each turn is timed. If the timer runs down a life is lost..
+* increase number of words in game word file. 
 
- ## **Testing**
-The code was validated using: 
+## **Testing**
 * Code was run through a PEP8 linter using (http://pep8online.com/) to identify and fix any errors.
 * Manually tested the application by inputting all possible iterations of user responses and measuring the outcome with the expected parameters to confirm all were functioning as they should be. (within the IDE environemnt and in the deployed environment via the Heroku platform.
+## **Languages**
+* Python.
+## **Bugs**
+* When implementing hangman graphics, initially lives retreated from fully hanged man to nothing. Had to reverse order and set appropriately.
+* A lot of adjustment and modification required for the Heroku terminal viewer. Too may lines overlapped and graphics were half off the screen.
+
+## **Deployment**
+The project was deployed onto the Heroku platform. This is a temporary solution as Heroku is set to stop provision of free hosting from November 2022. Alternative options are currently being researched. 
+
+* Steps to deploy while hosted via the Heroku platform:
+  * Fork or clone this repository.
+  * Ensure the Procfile is in place.
+  * requirements.txt can be left empty as this project does not use any external libraries. 
+  * Create a new app in [Heroku](https://dashboard.heroku.com/apps).
+  * Select "New" and "Create new app".
+  * Name the new app and click "Create new app".
+  * In "Settings" select "BuildPack" and select Python and Node.js. (Python must be at the top of the list).
+  * Whilst still in "Settings", click "Reveal Config Vars" and input the folloing. KEY: PORT, VALUE: 8000. Nothing else is needed here as this project does not have any sensitive files.
+  * Click on "Deploy" and select your deploy method and repository.
+  * Click "Connect" on selected repository. 
+  * Either choose "Enable Automatic Deploys" or "Deploy Branch" in the manual deploy section. 
+  * Heroku will now deploy the site.
+
+  ## **Credits**
+ * [Code Institute](https://codeinstitute.net/) plus the extended Code Institute community via Slack for their invaluable support. How to deploy to Heroku.
+
+ * [FreeCodeCamp](https://www.freecodecamp.org/) for additional coding and python information.
