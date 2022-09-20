@@ -45,13 +45,13 @@ To build a terminal based game of Hangman for user to mentally challenge themsel
   * Explains Game play to user
   * Explains how to continue
 
-  ![Home page](docs/read-me/main-menu.png)
+  ![Home page](images/home_page.jpg)
 
 * Choose challenge difficulty
   * 'Lemon Squeezy' = 10 lives
   * 'King of the Swingers!' = 5 lives
 
-![Choose difficulty](docs/read-me/difficulty.png)
+![Choose difficulty](images/challenge_choice.jpg)
 
 * View Game Rules
 
@@ -61,7 +61,7 @@ To build a terminal based game of Hangman for user to mentally challenge themsel
    * A function randomly generates a word from a list of 500 words.
    * The player can not see what the word is but can see how many letters are in the word denoted by _ _ _ _ _ 
 
-![Game play](docs/read-me/amount-of-letters.png) 
+![Game play](images/game_play.jpg) 
 
  * Lives with graphical representation
    * Depending on difficilty level chosen, the user has a limited amount of lives before game ends.
