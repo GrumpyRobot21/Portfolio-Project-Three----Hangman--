@@ -150,7 +150,7 @@ def re_run():
     """
     again = pyfiglet.figlet_format("Try Again!")
     print(Colortext.RED + Colortext.BOLD + again)
-    print(Colortext.GREEN + Colortext.BOLD + "\n\n(Well, we had to include the statutory" + Colortext.YELLOW + Colortext.BOLD + "'BIG LETTERS'" + Colortext.GREEN + Colortext.BOLD + "at some point..)\n\n Now, to give this fabulously designed game another shot\n\n Enter " + Colortext.YELLOW + Colortext.BOLD + "'y'" + Colortext.GREEN + Colortext.BOLD +" for 'Lets do this!' or..\n\n Enter " + Colortext.YELLOW + Colortext.BOLD + "'n'" + Colortext.GREEN + Colortext.BOLD +" for 'I'm a big Jessie'")
+    print(Colortext.GREEN + Colortext.BOLD + "\n\n (Well, we had to include the statutory " + Colortext.YELLOW + Colortext.BOLD + "'BIG LETTERS'" + Colortext.GREEN + Colortext.BOLD + " at some point..)\n\n Now, to give this fabulously designed game another shot\n\n Enter " + Colortext.YELLOW + Colortext.BOLD + "'y'" + Colortext.GREEN + Colortext.BOLD +" for 'Lets do this!' or..\n\n Enter " + Colortext.YELLOW + Colortext.BOLD + "'n'" + Colortext.GREEN + Colortext.BOLD +" for 'I'm a big Jessie'")
 
     choice = input('\n')
 
