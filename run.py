@@ -30,9 +30,9 @@ def start_intro():
        //  \\\                                  \ |  |
       //    \\\                                  \|  |
      //      \\\                                  |  |
-     \\\      // 
-      \\\    //
-       \\\==// 
+     \\\      //                                  |  |
+      \\\    //                                   |  |
+       \\\==//                                    |  |
     """)
     print(Colortext.BLUE + Colortext.BOLD + " Welcome to ye olde game of HANGMAN!!!!\n\n You the player must carefully select letters in the vain hope\n of avoiding the gallows by guessing the word before it's too late!\n Can you cheat the hangmans noose in time?  Find out....if you dare!\n")
 
