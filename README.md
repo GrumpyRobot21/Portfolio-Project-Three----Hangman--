@@ -24,6 +24,8 @@ When a player guesses incorrectly, they will receive an error message and the pl
 
 The game is over either when the player has correctly guessed the word or they have run out of lives. 
 
+ * [**Back to contents**](#table-of-contents)
+
 ## **Planning Stage**
 
 ### **User Goals**
@@ -40,6 +42,8 @@ To build a terminal based game of Hangman for users to mentally challenge themse
 * Were there any logic errors that could perceivably break the game?
 
 ![Design FlowChart](images/hangman_flow.jpg) 
+
+ * [**Back to contents**](#table-of-contents)
 
  ## **Features**
 
@@ -84,6 +88,8 @@ To build a terminal based game of Hangman for users to mentally challenge themse
 * Increase the level of difficulty by adding a third option where each turn is timed. If the timer runs down a life is lost..
 * increase number of words in game word file. 
 
+ * [**Back to contents**](#table-of-contents)
+
 ## **Testing**
 * Code was run through a PEP8 linter using (http://pep8online.com/) to identify and fix any errors.
 * Manually tested the application by inputting all possible iterations of user responses and measuring the outcome with the expected parameters to confirm all were functioning as they should be. (within the IDE environemnt and in the deployed environment via the Heroku platform.
@@ -92,6 +98,8 @@ To build a terminal based game of Hangman for users to mentally challenge themse
 ## **Bugs**
 * When implementing hangman graphics, initially lives retreated from fully hanged man to nothing. Had to reverse order and set appropriately.
 * A lot of adjustment and modification required for the Heroku terminal viewer. Too may lines overlapped and graphics were half off the screen.
+
+ * [**Back to contents**](#table-of-contents)
 
 ## **Deployment**
 The project was deployed onto the Heroku platform. This is a temporary solution as Heroku is set to stop provision of free hosting from November 2022. Alternative options are currently being researched. 
@@ -110,7 +118,11 @@ The project was deployed onto the Heroku platform. This is a temporary solution 
   * Either choose "Enable Automatic Deploys" or "Deploy Branch" in the manual deploy section. 
   * Heroku will now deploy the site.
 
+   * [**Back to contents**](#table-of-contents)
+
   ## **Credits**
  * [Code Institute](https://codeinstitute.net/) plus the extended Code Institute community via Slack for their invaluable support. How to deploy to Heroku.
 
  * [FreeCodeCamp](https://www.freecodecamp.org/) for additional coding and python information.
+
+  * [**Back to contents**](#table-of-contents)
