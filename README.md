@@ -36,11 +36,11 @@ To build a terminal based game of Hangman for users to mentally challenge themse
 
 ### **User Journey**
 
-* The user is introducced to the intro screen, setting the scene and getting them ready to play a game of Hangman. It encourges participation by asking the user to enter 'p' to engage with the game play environemnt. The application responds with helpful feedback if the input is not appropriate.
+* The user is introducced to the intro screen, setting the scene and getting them ready to play a game of Hangman. It requests that they enter their name in order to make the game more personal and interactive. It encourges participation by asking the user to enter 'p' to engage with the game play environment. The application responds with helpful feedback if the input is not appropriate.
 * The user is now in the challenge level choice screen. They are encouraged to choose which level of difficulty they wish to activate. The application responds with helpful feedback if the input is not appropriate.
 * The game play screen confirms the player difficulty choice and sets the game environment for the player. The player then has to continue to input letter guesses to se if they can guess the complete word before they run out of lives. The application responds with helpful feedback if the input is not appropriate.
 * If the player wins or loses they get appropriate feedback and in the case of losing, the word they did not guess in time. After short pause they are taken to a screen where they are asked if they want to play another game or not. The application responds with helpful feedback if the input is not appropriate.
-* If the player chooses to play they are taken to the challenge level choice screen. If they do not wish to continue they are taken back to the inro screen. The application responds with helpful feedback if the input is not appropriate.
+* If the player chooses to play they are taken to the challenge level choice screen. If they do not wish to continue they are taken back to the intro screen. The application responds with helpful feedback if the input is not appropriate.
 
 ### **Using FlowCharts**
  During the planning process in order to assist with the development progress and to figure out the linear process of the game I created the following flowchart.
@@ -75,7 +75,7 @@ To build a terminal based game of Hangman for users to mentally challenge themse
 * A function randomly generates a word from a list, gamewords.py.
 * The player can not see what the word is but can see how many letters are in the word denoted by _ _ _ _ _ 
 * Lives are shown through graphical representation
-* Depending on difficilty level chosen, the user has a limited amount   of lives before game ends.
+* Depending on difficilty level chosen, the user has a limited amount of lives before game ends.
    
 ![Ammount of Lives](images/gameplay.jpg) 
 
@@ -94,7 +94,7 @@ To build a terminal based game of Hangman for users to mentally challenge themse
 ## **Future Functionality Ideas**
 * An option for the user to input the whole word if they guess it correctly before the game is over.
 * Increase the level of difficulty by adding a third option where each turn is timed. If the timer runs down a life is lost..
-* increase number of words in game word file. 
+* increase number of words available in game word files. 
 
  * [**Back to contents**](#table-of-contents)
 
@@ -104,8 +104,10 @@ To build a terminal based game of Hangman for users to mentally challenge themse
 ## **Languages**
 * Python.
 ## **Bugs**
-* When implementing hangman graphics, initially lives retreated from fully hanged man to nothing. Had to reverse order and set appropriately.
-* A lot of adjustment and modification required for the Heroku terminal viewer. Too may lines overlapped and graphics were half off the screen.
+* When implementing hangman graphics, initially lives retreated from fully hanged man to nothing. I simply reversed the order of the graphics and set appropriately to solve the issue.
+* Line length was a particular headache especially with the use of a lot of text within the game. This meant carefully checking and adjusting the code especially whenever adding methods to customise the text. 
+* When retrieving a random word form the google sheet it initially appeared in the following foramt - ['example'] - after searching for insight Stack Overflow provided a solution with the following string indexing added to the code - [2:-2] returning - example -
+* The graphical element 'the noose image' at the start of the game provided some issues regarding the error message referring to the back slashes as 'invalid escape sequences'. This was remedied by using the raw string prefix 'r' to specify a string that uses specific characters that have a special meaning within python.
 
  * [**Back to contents**](#table-of-contents)
 
@@ -131,6 +133,10 @@ The project was deployed onto the Heroku platform. This is a temporary solution 
   ## **Credits**
  * [Code Institute](https://codeinstitute.net/) plus the extended Code Institute community via Slack for their invaluable support. How to deploy to Heroku.
 
- * [FreeCodeCamp](https://www.freecodecamp.org/) for additional coding and python information.
+ * [Code Institute Tutorial Love Sandwiches](https://github.com/GrumpyRobot21/lovesandwiches) for the toutorials and discussion around using google sheets as a database plus a guide on how to add and use the appropriate google API's 
+
+ * [Stack Overflow](https://stackoverflow.com/) as the place to go for wise counsel and learn solutions to coding issues.
+
+ * [FreeCodeCamp](https://www.freecodecamp.org/) for the following python hangman tutorial where the basis of the game code was derived from - [kying18/hangman]https://github.com/kying18/hangman/blob/master/hangman.py.
 
   * [**Back to contents**](#table-of-contents)
