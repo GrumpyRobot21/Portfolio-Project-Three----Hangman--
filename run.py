@@ -159,7 +159,7 @@ def game_rules():
     choose = input("\n")
 
     if choose == "1":  # Player selects the easiest challenge setting.
-        lives = 10
+        lives = 10  # given 10 lives to start game with
 
         def hang_word_easy():
             easywords = SHEET.worksheet('easywords')
@@ -188,7 +188,7 @@ def game_rules():
         )  # clears the console - \033 is the ASCII escape character.
         play_game(hang_word, lives)
     elif choose == "2":  # Player selects difficult challenge setting.
-        lives = 5
+        lives = 5  # only given 5 lives to start game with
 
         def hang_word_hard():
             hardwords = SHEET.worksheet('hardwords')
@@ -262,9 +262,8 @@ def play_game(hang_word, lives):
         "lives left before the big drop...\ndon't lose them all at once!",
     )
 
-    while (
-            len(player_letters) > 0 and lives > 0
-    ):  # loops user letter guesses until game lost or won.
+    while player_letters and lives > 0:
+        # loops user letter guesses
         print(
             Colortext.RED + player_lives(lives)
         )  # Prints player hangman 'life' graphic
@@ -297,9 +296,6 @@ def play_game(hang_word, lives):
                     + "Phew! That WAS a lucky guess! It's in there!"
                 )
                 time.sleep(3)  # 3 second delay
-                print(
-                    "\033c", end=""
-                )  # clears the console - \033 s the ASCII escape character.
             else:
                 lives = lives - 1
                 # Incorrect user choice and deducts life from tally
@@ -311,13 +307,10 @@ def play_game(hang_word, lives):
                     " 'ain't in the word my friend!",
                 )
                 time.sleep(4)  # 4 second delay
-                print(
-                    "\033c", end=""
-                )  # clears the console - \033 s the ASCII escape character.
         elif (
                 user_guess in used
         ):  # When user chooses letter already used
-            # Sand identified as being in the used set
+            # and identified as being in the used set
             print(
                 Colortext.YELLOW
                 + Colortext.BOLD
@@ -327,9 +320,6 @@ def play_game(hang_word, lives):
                 + Colortext.BOLD
                 + "\nYou can't use the same letter twice!")
             time.sleep(3)  # 3 second delay
-            print(
-                "\033c", end=""
-            )  # clears the console - \033 s the ASCII escape character.
         else:  # when user chooses non ascii qualified character.
             print(
                 Colortext.YELLOW
@@ -341,10 +331,9 @@ def play_game(hang_word, lives):
                 + Colortext.BOLD
                 + "\n\nPreferably one's you haven't made already....")
             time.sleep(4)  # 4 second delay
-            print(
-                "\033c", end=""
-            )  # clears the console - \033 s the ASCII escape character.
-
+        print(
+            "\033c", end=""
+        )  # clears the console - \033 s the ASCII escape character.
     if lives == 0:
         print(Colortext.RED + player_lives(lives))
         print(
@@ -370,26 +359,23 @@ def play_game(hang_word, lives):
         print("\nBy the way, the word you missed was: "
               + Colortext.YELLOW + hang_word)
         time.sleep(10)  # 12 second delay
-        print(
-            "\033c", end=""
-        )  # clears the console - \033 s the ASCII escape character.
-        re_run()  # goes to game replay options
     else:
         print(Colortext.RED + player_lives(lives))
         print(
             Colortext.GREEN
             + Colortext.BOLD
-            + "\nWell done" + name.upper() +
+            + "\nWell done " + name.upper() +
             "!! (You just cost me a fiver though...)")
         print(
             Colortext.GREEN
             + Colortext.BOLD
             + "I'll bet you fancy another try now?")
         time.sleep(6)  # 4 second delay
-        print(
-            "\033c", end=""
-        )  # clears the console - \033 s the ASCII escape character.
-        re_run()  # goes to game replay options
+
+    print(
+        "\033c", end=""
+    )  # clears the console - \033 is the ASCII escape character.
+    re_run()  # goes to game replay options
 
 
 def re_run():
@@ -449,7 +435,7 @@ def re_run():
             + Colortext.BOLD
             + "Once bitten, twice shy.")
         print(
-            Colortext.REDs
+            Colortext.RED
             + Colortext.BOLD
             + "\n\nIt takes a strong backbone to play ")
         print(
