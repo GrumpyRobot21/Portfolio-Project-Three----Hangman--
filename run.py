@@ -1,10 +1,11 @@
 import gspread  # imports gspread library
 from google.oauth2.service_account import Credentials
 # imports credentials class
+# import keyboard  # hotkey support for user interaction
 import string  # ascii alphabet function
 import time  # time sleep function
 import pyfiglet  # big letter graphics module
-import random  # import random module
+import random
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -26,6 +27,12 @@ class Colortext:
     BOLD = "\033[1m"
 
 
+print("\033c", end='')
+name = input(Colortext.BLUE + Colortext.BOLD + "What is your name? ")
+
+print("\033c", end='')
+
+
 def start_intro():
     """
     Generates game options for player: intro to the game, difficulty, rules.
@@ -33,7 +40,7 @@ def start_intro():
     print(
         Colortext.BOLD
         + Colortext.YELLOW
-        + """
+        + r"""
        ==============================================
        ==============================================
          ||                              \ \     |  |
@@ -41,24 +48,26 @@ def start_intro():
         /==\                               \ \   |  |
        |====|                               \ \  |  |
        |====|                                \ \ |  |
-       |====|                                 \ \|  |
-       //  \\\                                  \ |  |
-      //    \\\                                  \|  |
-     //      \\\                                  |  |
-     \\\      //                                  |  |
-      \\\    //                                   |  |
-       \\\==//                                    |  |
+        \==/                                  \ \|  |
+       //  \\                                  \ |  |
+      //    \\                                  \|  |
+     //      \\                                  |  |
+     \\      //                                  |  |
+      \\    //                                   |  |
+       \\==//                                    |  |
     """
     )
     print(
         Colortext.BLUE
         + Colortext.BOLD
-        + "Welcome to ye olde game of HANGMAN!!!!")
-        
+        + "Welcome " + Colortext.RED
+        + Colortext.BOLD
+        + name.upper() + Colortext.BLUE
+        + Colortext.BOLD + " to ye olde game of HANGMAN!!!!")
     print(
         Colortext.BLUE
         + Colortext.BOLD
-        + "\n\nYou the player must carefully select letters")
+        + "\n\nYou must carefully select letters")
     print("in the vain hope of avoiding the gallows")
     print(
         "by guessing the word before it's too late!")
@@ -163,7 +172,8 @@ def game_rules():
         print(
             Colortext.GREEN
             + Colortext.BOLD
-            + "\n\nPlaying it safe eh? or maybe prolonging the agony.....")
+            + "\n\nPlaying it safe eh " + name.upper() +
+            "? or maybe prolonging the agony.....")
         print(
             Colortext.GREEN
             + Colortext.BOLD
@@ -171,7 +181,7 @@ def game_rules():
         print(
             Colortext.GREEN
             + Colortext.BOLD
-            + "\n\nAll that nervous anticipation.....! ")
+            + "\n\n All that nervous anticipation.....! ")
         time.sleep(5)  # 5 second delay
         print(
             "\033c", end=""
@@ -191,7 +201,7 @@ def game_rules():
         print(
             Colortext.GREEN
             + Colortext.BOLD
-            + "\n\nOoh, you're feeling brave aren't you!")
+            + "\n\nOoh " + name.upper() + ", you're feeling brave aren't you!")
         print(
             Colortext.GREEN
             + Colortext.BOLD
@@ -205,7 +215,8 @@ def game_rules():
         print(
             Colortext.GREEN
             + Colortext.BOLD
-            + "\n\nNot getting the 'hang' of this are you?")
+            + "\n\nNot getting the 'hang' of this are you " + name.upper() +
+            "?")
         print(
             Colortext.GREEN
             + Colortext.BOLD
@@ -323,7 +334,8 @@ def play_game(hang_word, lives):
             print(
                 Colortext.YELLOW
                 + Colortext.BOLD
-                + "\nHehehe, \nTime to make better choices.")
+                + "\nHehehe, Time to make better choices "
+                + name.upper() + ".")
             print(
                 Colortext.YELLOW
                 + Colortext.BOLD
@@ -338,7 +350,7 @@ def play_game(hang_word, lives):
         print(
             Colortext.GREEN
             + Colortext.BOLD
-            + "\n OUCH!! I bet that stings a bit!")
+            + "\nOUCH!! I bet that stings a bit " + name.upper() + "!")
         print(
             Colortext.GREEN
             + Colortext.BOLD
@@ -354,8 +366,8 @@ def play_game(hang_word, lives):
         print(
             Colortext.GREEN
             + Colortext.BOLD
-            + "\n if you've the 'neck' for it that is.")
-        print("\n By the way, the word you missed was: "
+            + "\nif you've the 'neck' for it that is.")
+        print("\nBy the way, the word you missed was: "
               + Colortext.YELLOW + hang_word)
         time.sleep(10)  # 12 second delay
         print(
@@ -367,7 +379,8 @@ def play_game(hang_word, lives):
         print(
             Colortext.GREEN
             + Colortext.BOLD
-            + "\nWell done!! (You just cost me a fiver though...)")
+            + "\nWell done" + name.upper() +
+            "!! (You just cost me a fiver though...)")
         print(
             Colortext.GREEN
             + Colortext.BOLD
@@ -383,7 +396,7 @@ def re_run():
     """
     Option to replay game function
     """
-    again = pyfiglet.figlet_format("Try Again!")
+    again = pyfiglet.figlet_format("Try Again! \n" + name.upper() + "")
     print(Colortext.RED + Colortext.BOLD + again)
     print(
         Colortext.GREEN
@@ -396,13 +409,13 @@ def re_run():
         + Colortext.BOLD
         + " at some point..)"
         + "\n\n Now, to give this fabulously designed game another shot"
-        + "\n\n Enter "
+        + "\n\nEnter "
         + Colortext.YELLOW
         + Colortext.BOLD
         + "'y'"
         + Colortext.GREEN
         + Colortext.BOLD
-        + " for 'Lets do this!' or..\n\n Enter "
+        + " for 'Lets do this!' or..\n\nEnter "
         + Colortext.YELLOW
         + Colortext.BOLD
         + "'n'"
@@ -430,11 +443,15 @@ def re_run():
         print(
             Colortext.RED
             + Colortext.BOLD
-            + "\n\nNever mind, I understand. Once bitten, twice shy.")
+            + "\n\nNever mind " + name.upper() + ", I understand.")
         print(
             Colortext.RED
             + Colortext.BOLD
-            + "\n\nIt takes a strong backbone to play")
+            + "Once bitten, twice shy.")
+        print(
+            Colortext.REDs
+            + Colortext.BOLD
+            + "\n\nIt takes a strong backbone to play ")
         print(
             Colortext.RED
             + Colortext.BOLD
@@ -452,7 +469,8 @@ def re_run():
         print(
             Colortext.BLUE
             + Colortext.BOLD
-            + "\n\n STILL not getting the 'hang' of this are you?")
+            + "\n\nSTILL not getting the 'hang' of this are you"
+            + name.upper() + "?")
         print(
             Colortext.BLUE
             + Colortext.BOLD
@@ -474,9 +492,9 @@ def player_lives(lives):
     ______________
     ||  /        |
     || /         0
-    ||/         /|\\ 
+    ||/         /|\\
     ||           |
-    ||         _/ \\_   
+    ||         _/ \\
     ||
     ||
     ||
@@ -486,22 +504,9 @@ def player_lives(lives):
     ______________
     ||  /        |
     || /         0
-    ||/         /|\\ 
+    ||/         /|\\
     ||           |
-    ||         _/ \\ 
-    ||
-    ||
-    ||
-    ||____________
-
-    """,
-        """
-    ______________
-    ||  /        |
-    || /         0
-    ||/         /|\\ 
-    ||           |
-    ||         _/ 
+    ||         _/ \\
     ||
     ||
     ||
@@ -512,9 +517,9 @@ def player_lives(lives):
     ______________
     ||  /        |
     || /         0
-    ||/         /|\\ 
+    ||/         /|\\
     ||           |
-    ||          / 
+    ||         _/
     ||
     ||
     ||
@@ -525,9 +530,9 @@ def player_lives(lives):
     ______________
     ||  /        |
     || /         0
-    ||/         /|\\ 
+    ||/         /|\\
     ||           |
-    ||         
+    ||          /
     ||
     ||
     ||
@@ -538,9 +543,22 @@ def player_lives(lives):
     ______________
     ||  /        |
     || /         0
-    ||/         /|\\ 
-    ||           
-    ||         
+    ||/         /|\\
+    ||           |
+    ||
+    ||
+    ||
+    ||
+    ||____________
+
+    """,
+        """
+    ______________
+    ||  /        |
+    || /         0
+    ||/         /|\\
+    ||
+    ||
     ||
     ||
     ||
@@ -551,8 +569,8 @@ def player_lives(lives):
     ||  /        |
     || /         0
     ||/         /|
-    ||           
-    ||         
+    ||
+    ||
     ||
     ||
     ||
@@ -562,9 +580,9 @@ def player_lives(lives):
     ______________
     ||  /        |
     || /         0
-    ||/          | 
-    ||           
-    ||         
+    ||/          |
+    ||
+    ||
     ||
     ||
     ||
@@ -575,9 +593,9 @@ def player_lives(lives):
     ______________
     ||  /        |
     || /         0
-    ||/         
-    ||           
-    ||         
+    ||/
+    ||
+    ||
     ||
     ||
     ||____________
@@ -586,10 +604,10 @@ def player_lives(lives):
         """
     ______________
     ||  /        |
-    || /         
-    ||/         
-    ||           
-    ||         
+    || /
+    ||/
+    ||
+    ||
     ||
     ||
     ||
@@ -598,15 +616,15 @@ def player_lives(lives):
     """,
         """
     ______________
-    ||  /        
-    || /         
-    ||/         
-    ||           
-    ||         
+    ||  /
+    || /
+    ||/
     ||
-    ||          
-    ||         
-    ||____________      
+    ||
+    ||
+    ||
+    ||
+    ||____________
     """,
     ]
     return player_live[lives]
