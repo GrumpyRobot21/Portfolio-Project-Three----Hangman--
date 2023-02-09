@@ -43,7 +43,7 @@ To build a terminal based game of Hangman for users to mentally challenge themse
 * If the player chooses to play they are taken to the challenge level choice screen. If they do not wish to continue they are taken back to the intro screen. The application responds with helpful feedback if the input is not appropriate.
 
 ### **Using FlowCharts**
- During the planning process in order to assist with the development progress and to figure out the linear process of the game I created the following flowchart.
+ During the planning process, in order to assist with the development progress and to figure out the linear process of the game I created the following flowchart.
 
 * Where were inputs from the user needed?
 * How would I deal with invalid inputs or incorrect tries?
@@ -63,8 +63,8 @@ To build a terminal based game of Hangman for users to mentally challenge themse
 ![Home page](images/home_page.jpg)
 
 * Choose challenge difficulty
-* 'Lemon Squeezy' = 10 lives
-* 'King of the Swingers!' = 5 lives
+* 'Lemon Squeezy' = 10 lives and smaller, easier to guess word choice.
+* 'King of the Swingers!' = 5 lives and longer, harder to guess word choice.
 
 ![Choose difficulty](images/challenge_choice.jpg)
 
@@ -72,9 +72,9 @@ To build a terminal based game of Hangman for users to mentally challenge themse
 
 ![View game rules](images/game_play.jpg)
 
-* A function randomly generates a word from a list, gamewords.py.
-* The player can not see what the word is but can see how many letters are in the word denoted by _ _ _ _ _ 
-* Lives are shown through graphical representation
+* A function randomly generates a word from google spreadsheets utilising google API's to access the data held on the sheets.
+* The player can not see what the word is but can see how many letters are in the word, denoted by _ _ _ _ _ 
+* Lives are shown through graphical representation of the "hangman"
 * Depending on difficilty level chosen, the user has a limited amount of lives before game ends.
    
 ![Ammount of Lives](images/gameplay.jpg) 
@@ -94,19 +94,20 @@ To build a terminal based game of Hangman for users to mentally challenge themse
 ## **Future Functionality Ideas**
 * An option for the user to input the whole word if they guess it correctly before the game is over.
 * Increase the level of difficulty by adding a third option where each turn is timed. If the timer runs down a life is lost..
-* increase number of words available in game word files. 
+* increase number of words available in game word files.
+* Create a scoreboard with the names of the top 5 most recent, successful players. 
 
  * [**Back to contents**](#table-of-contents)
 
 ## **Testing**
-* Code was run through a PEP8 linter using (http://pep8online.com/) to identify and fix any errors.
+* Code was run through the following online python testing websites: [ExtendsClass Python Tester](https://extendsclass.com/python.html) and [ExtendsClass Python syntax checker](https://extendsclass.com/python-tester.html)
 * Manually tested the application by inputting all possible iterations of user responses and measuring the outcome with the expected parameters to confirm all were functioning as they should be. (within the IDE environemnt and in the deployed environment via the Heroku platform.
 ## **Languages**
 * Python.
 ## **Bugs**
 * When implementing hangman graphics, initially lives retreated from fully hanged man to nothing. I simply reversed the order of the graphics and set appropriately to solve the issue.
-* Line length was a particular headache especially with the use of a lot of text within the game. This meant carefully checking and adjusting the code especially whenever adding methods to customise the text. 
-* When retrieving a random word form the google sheet it initially appeared in the following foramt - ['example'] - after searching for insight Stack Overflow provided a solution with the following string indexing added to the code - [2:-2] returning - example -
+* Line length was a particular headache especially with the use of a lot of text within the game. This meant carefully checking and adjusting the code particularly when using methods to customise the text. 
+* When retrieving a random word form the google sheet it initially appeared in the following foramt - ['example'] - after searching for insight online, Stack Overflow provided a solution with the following string indexing added to the code - [2:-2] returning - example -
 * The graphical element 'the noose image' at the start of the game provided some issues regarding the error message referring to the back slashes as 'invalid escape sequences'. This was remedied by using the raw string prefix 'r' to specify a string that uses specific characters that have a special meaning within python.
 
  * [**Back to contents**](#table-of-contents)
@@ -133,10 +134,12 @@ The project was deployed onto the Heroku platform. This is a temporary solution 
   ## **Credits**
  * [Code Institute](https://codeinstitute.net/) plus the extended Code Institute community via Slack for their invaluable support. How to deploy to Heroku.
 
- * [Code Institute Tutorial Love Sandwiches](https://github.com/GrumpyRobot21/lovesandwiches) for the toutorials and discussion around using google sheets as a database plus a guide on how to add and use the appropriate google API's 
+ * [Code Institute Tutorial Love Sandwiches](https://github.com/GrumpyRobot21/lovesandwiches) for the video lessons and discussion around using google sheets as a database plus a guide on how to add and use the appropriate google API's 
 
  * [Stack Overflow](https://stackoverflow.com/) as the place to go for wise counsel and learn solutions to coding issues.
 
  * [FreeCodeCamp](https://www.freecodecamp.org/) for the following python hangman tutorial where the basis of the game code was derived from - [kying18/hangman]https://github.com/kying18/hangman/blob/master/hangman.py.
+
+ * Thanks to my Mentor, Chris Quinn, for being not only a very nice chap but also providing the best kind of support and encouragement.
 
   * [**Back to contents**](#table-of-contents)

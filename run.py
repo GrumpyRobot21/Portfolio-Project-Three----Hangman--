@@ -1,11 +1,10 @@
 import gspread  # imports gspread library
 from google.oauth2.service_account import Credentials
 # imports credentials class
-# import keyboard  # hotkey support for user interaction
 import string  # ascii alphabet function
 import time  # time sleep function
 import pyfiglet  # big letter graphics module
-import random
+import random  # random selection module
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -28,6 +27,7 @@ class Colortext:
 
 
 print("\033c", end='')
+
 name = input(Colortext.BLUE + Colortext.BOLD + "What is your name? ")
 
 print("\033c", end='')
@@ -94,7 +94,7 @@ def start_intro():
         print(
             Colortext.GREEN
             + Colortext.BOLD
-            + "\nWRONG KEY!(I would go for the easy setting if I were you.)")
+            + "WRONG KEY!(I would go for the easy setting if I were you.)")
         time.sleep(3)
         print(
             "\033c", end=""
@@ -259,7 +259,7 @@ def play_game(hang_word, lives):
     print(
         "\nYou have",
         lives,
-        "lives left before the big drop...\ndon't lose them all at once!",
+        "lives left before the big drop...\nDon't lose them all at once!",
     )
 
     while player_letters and lives > 0:
@@ -394,7 +394,7 @@ def re_run():
         + Colortext.GREEN
         + Colortext.BOLD
         + " at some point..)"
-        + "\n\n Now, to give this fabulously designed game another shot"
+        + "\n\nNow, to give this fabulously designed game another shot"
         + "\n\nEnter "
         + Colortext.YELLOW
         + Colortext.BOLD
