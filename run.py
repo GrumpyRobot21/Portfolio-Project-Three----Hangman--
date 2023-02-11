@@ -1,10 +1,14 @@
-import gspread  # imports gspread library
-from google.oauth2.service_account import Credentials
-# imports credentials class
+"""
+ Import python modules
+"""
 import string  # ascii alphabet function
 import time  # time sleep function
-import pyfiglet  # big letter graphics module
 import random  # random selection module
+import pyfiglet  # big letter graphics module
+import gspread  # Imports gspread library.
+from google.oauth2.service_account import Credentials
+# Imports credentials class.
+
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -18,7 +22,8 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('hangman')
 
 
-class Colortext:
+class Colortext:  # pylint: disable=too-few-public-methods
+    """adds text color classes for game"""
     RED = "\033[0;31m"
     GREEN = "\033[0;32m"
     BLUE = "\033[0;34m"
@@ -162,6 +167,9 @@ def game_rules():
         lives = 10  # given 10 lives to start game with
 
         def hang_word_easy():
+            """
+            retrieves randonly chosen word from the easyword google sheet
+            """
             easywords = SHEET.worksheet('easywords')
             easychoice = easywords.get_all_values()
             easy = random.choice(easychoice)
@@ -191,6 +199,9 @@ def game_rules():
         lives = 5  # only given 5 lives to start game with
 
         def hang_word_hard():
+            """
+            retrieves randonly chosen word from the hardword google sheet
+            """
             hardwords = SHEET.worksheet('hardwords')
             hardchoice = hardwords.get_all_values()
             hard = random.choice(hardchoice)
@@ -413,7 +424,6 @@ def re_run():
     choice = input("\n")
 
     if choice == "y":  # Player elects to play again.
-        lives = 10
         print(
             Colortext.RED
             + Colortext.BOLD

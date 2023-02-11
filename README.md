@@ -100,7 +100,7 @@ To build a terminal based game of Hangman for users to mentally challenge themse
  * [**Back to contents**](#table-of-contents)
 
 ## **Testing**
-* Code was run through the following online python testing websites: [ExtendsClass Python Tester](https://extendsclass.com/python.html) and [ExtendsClass Python syntax checker](https://extendsclass.com/python-tester.html)
+* The pep8online website, as recomended in the code institute course material,  is not currently running at the time of submission/testing. The following steps were taken to validate and correct the python code and remove all reorted errors. PEP8 compliance was checked with X. The errors  A, B and C were fixed. I did not fix error D due to reason" works 
 * Manually tested the application by inputting all possible iterations of user responses and measuring the outcome with the expected parameters to confirm all were functioning as they should be. (within the IDE environemnt and in the deployed environment via the Heroku platform.
 ## **Languages**
 * Python.

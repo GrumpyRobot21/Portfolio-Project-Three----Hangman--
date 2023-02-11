@@ -1,1 +1,0 @@
-words = ['superman', 'batman', 'wonderwoman', 'wolverine', 'spiderman', 'hawkeye', 'thor', 'numpty', 'galway', 'python', 'software', 'coding', 'computer', 'technology', 'knowledge', 'learning', 'project', 'portfolio', 'marvel', 'universe', 'galaxy', 'hubble', 'international', 'clueless', 'hackathon', 'hangman', 'tourniquet', 'developer']
