@@ -48,6 +48,7 @@ To build a terminal based game of Hangman for users to mentally challenge themse
 * Where were inputs from the user needed?
 * How would I deal with invalid inputs or incorrect tries?
 * Were there any logic errors that could perceivably break the game?
+* How to utilise API's in order to retrieve random words for the game from an external data source.
 
 ![Design FlowChart](images/hangman_flow.jpg) 
 
@@ -100,15 +101,19 @@ To build a terminal based game of Hangman for users to mentally challenge themse
  * [**Back to contents**](#table-of-contents)
 
 ## **Testing**
-* The pep8online website, as recomended in the code institute course material,  is not currently running at the time of submission/testing. The following steps were taken to validate and correct the python code and remove all reorted errors. PEP8 compliance was checked with X. The errors  A, B and C were fixed. I did not fix error D due to reason" works 
-* Manually tested the application by inputting all possible iterations of user responses and measuring the outcome with the expected parameters to confirm all were functioning as they should be. (within the IDE environemnt and in the deployed environment via the Heroku platform.
+* The pep8online website, as recommended in the code institute course material,  was not offline and unavailble for use at the time of submission/testing. The following steps were taken to validate and correct the python code and remove any errors. PEP8 compliance was checked with pylint within the gitpod environment. Following the correction of all line length errors, the adding of required docstrings for the method import section, corection of the 'invalid escape sequences' errors for the noose graphic at the start of the game and confirming that the Colortext class is storing the color styles for the text within the program, the final pylint score was 10.00, as confirmed via the screenshot below:
+
+![Pylint code check results](images/pylint-results.jpg)  
+
+* The application was also strenuously tested by manually inputting all possible iterations of user responses and measuring the outcome within the expected parameters to confirm all were functioning as they should be. (both within the IDE and the deployed environment.)
 ## **Languages**
 * Python.
 ## **Bugs**
 * When implementing hangman graphics, initially lives retreated from fully hanged man to nothing. I simply reversed the order of the graphics and set appropriately to solve the issue.
 * Line length was a particular headache especially with the use of a lot of text within the game. This meant carefully checking and adjusting the code particularly when using methods to customise the text. 
-* When retrieving a random word form the google sheet it initially appeared in the following foramt - ['example'] - after searching for insight online, Stack Overflow provided a solution with the following string indexing added to the code - [2:-2] returning - example -
-* The graphical element 'the noose image' at the start of the game provided some issues regarding the error message referring to the back slashes as 'invalid escape sequences'. This was remedied by using the raw string prefix 'r' to specify a string that uses specific characters that have a special meaning within python.
+* When retrieving a random word form the google sheet the selected words initially appeared in the following format - ['example'] - after searching for insight online, Stack Overflow provided a solution with the following string indexing added to the code - [2:-2] returning the selected words in the correct format for the game - example -
+* The graphical element 'the noose image' at the start of the game provided some issues regarding the error messages referring to the back slashes as 'invalid escape sequences'. This was remedied by using the raw string prefix 'r' to specify a string that uses specific characters that have a special meaning within python.
+* A missing-module-docstring error indicated that the module imports at the start of the game required an additional docstring.
 
  * [**Back to contents**](#table-of-contents)
 
