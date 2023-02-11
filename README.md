@@ -101,11 +101,11 @@ To build a terminal based game of Hangman for users to mentally challenge themse
  * [**Back to contents**](#table-of-contents)
 
 ## **Testing**
-* The pep8online website, as recommended in the code institute course material,  was not offline and unavailble for use at the time of submission/testing. The following steps were taken to validate and correct the python code and remove any errors. PEP8 compliance was checked with pylint within the gitpod environment. Following the correction of all line length errors, the adding of required docstrings for the method import section, corection of the 'invalid escape sequences' errors for the noose graphic at the start of the game and confirming that the Colortext class is storing the color styles for the text within the program, the final pylint score was 10.00, as confirmed via the screenshot below:
+* The pep8online website, as recommended in the code institute course material,  was offline and unavailable for use at the time of submission/testing. The following steps were taken to validate and correct the python code and remove any errors. PEP8 compliance was checked with pylint within the gitpod environment. Following the correction of all line length errors, the adding of required docstrings for the method import section, corection of the 'invalid escape sequences' errors for the noose graphic at the start of the game, refactoring the while loop on line 276, and confirming that the Colortext class is storing the color styles for the text within the program, the final pylint score was 10.00, as confirmed via the screenshot below:
 
 ![Pylint code check results](images/pylint-results.jpg)  
 
-* The application was also strenuously tested by manually inputting all possible iterations of user responses and measuring the outcome within the expected parameters to confirm all were functioning as they should be. (both within the IDE and the deployed environment.)
+* The application was also strenuously tested by manually inputting all possible iterations of user responses and measuring the outcome within the expected parameters to confirm all were functioning as they should be. This was then tested further through external users playing the game in order to check that all functionality worked appropriately. The finished version worked correctly through each user iteration without issue. (both within the IDE and the deployed environment.)
 ## **Languages**
 * Python.
 ## **Bugs**
